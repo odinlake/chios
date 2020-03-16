@@ -22,6 +22,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+
+// devenv can be restarted remotely
+app.use('/restart', function(req, res, next) {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('cycle request received, exiting...');
+    console.log('cycle request received, exiting...');
+    process.exit(0);
+});
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

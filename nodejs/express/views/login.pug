@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  include navbar.pug
+
+  div.container             
+    h1= title
+
+    form(method='POST' action='/login')
+      div.form-group
+        label.control-label.col-sm-2(for='pin') PIN
+        div.controls.col-sm-10
+          input.form-control(type='text' id='pin' name='pin')
+      button.btn.btn-primary(type='submit') Enter

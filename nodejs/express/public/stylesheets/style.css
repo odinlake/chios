@@ -1,8 +1,16 @@
 body {
-  padding: 0px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
 }
+
+footer.footer {
+    background: #f9f9f9;
+}
+
+nav.navbar {
+    background: rgba(29, 156, 229, 0.9);
+}
+

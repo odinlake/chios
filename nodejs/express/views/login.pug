@@ -1,14 +1,21 @@
 extends layout
 
 block content
-  include navbar.pug
+  section
+    div.container             
+      div.alert.alert-warning
+        if !showlogout
+          h1 Login
+          form(method='POST' action='/login')
+            div.form-group
+              div.controls
+                input.form-control(type='text' id='pin' name='pin')
+            button.btn.btn-primary(type='submit') Enter
+            
+        else
+          form(method='POST' action='/login/logout')
+            div.form-group
+              div.controls
+                input.form-control(type='hidden' id='action' name='action' value='logout')
+            button.btn.btn-primary(type='submit') Log Out
 
-  div.container             
-    h1= title
-
-    form(method='POST' action='/login')
-      div.form-group
-        label.control-label.col-sm-2(for='pin') PIN
-        div.controls.col-sm-10
-          input.form-control(type='text' id='pin' name='pin')
-      button.btn.btn-primary(type='submit') Enter

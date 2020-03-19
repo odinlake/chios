@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  section
+    div.container             
+      h1 List of Members
+
+      div.top
+      div.content
+        table.table.table-striped
+          thead
+            tr
+              th Screen Name
+              th Real Name
+              th Role
+          tbody
+            each row in data
+              tr
+                td= row.username
+                td= row.realname
+                td= row.adminrole
+

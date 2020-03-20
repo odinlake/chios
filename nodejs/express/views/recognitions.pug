@@ -3,7 +3,7 @@ extends layout
 block content
   section
     div.container             
-      h1 List of Members
+      h1 List of Recognitions
 
       div.top
       div.content
@@ -11,13 +11,15 @@ block content
           thead
             tr
               th Screen Name
-              th Real Name
-              th Role
+              th Recognition
+              th Date
+              th Signed By
           tbody
             each row in data
               tr
                 td
                   a(href='/people/profile/' + row.username)= row.username
-                td= row.realname
-                td= row.adminrole
-
+                td= row.recognition
+                td= row.date.toLocaleDateString()
+                td
+                  a(href='/people/profile/' + row.by_user)= row.by_user

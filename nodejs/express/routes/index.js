@@ -1,11 +1,13 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const chiosconfig = require('../libs/chiosconfig');
+const router = express.Router();
 
+
+/* GET index. */
 router.get('/', function(req, res, next) {
-    if (!req.session.pinused)
-        res.redirect(301, "/login");
-
-    res.render('index', { title: 'Chios' });
+    if (!chiosconfig.auth(req, res)) return;
+    res.render('index');
 });
+
 
 module.exports = router;

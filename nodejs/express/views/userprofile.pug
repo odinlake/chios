@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  section
+    div.container             
+      h1 Profile
+
+      div.content
+        dl
+          dt Screen Name
+          dd= pi.username
+          dt Real Name
+          dd= pi.realname
+          dt Role
+          dd= pi.adminrole
+
+      div.content
+        table.table.table-striped
+          thead
+            tr
+              th Recognition
+              th Date
+              th Signed By
+          tbody
+            each row in data
+              tr
+                td= row.recognition
+                td= row.date.toLocaleDateString()
+                td
+                  a(href='/people/profile/' + row.by_user)= row.by_user

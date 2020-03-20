@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title Chios
+  body
+    section
+      div.container             
+        h1 Instructions Received
+        p You will be redirected in a few seconds...
+
+    script(nonce="redirection").
+      setTimeout(function(){window.location.href='/';},5000);

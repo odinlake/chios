@@ -8,7 +8,7 @@ while true
 do
     echo "Press CTRL+C to stop the script execution"
     git pull
-    npm install
+    #npm install
     npm start
     sleep 5
 done

@@ -8,7 +8,7 @@ block content
         div.container
           form(method='POST' action='/people/addrecognition')
             div.form-group
-              label(for='username') User:
+              label(for='username') For User:
               select.form-control(name='username', id='username')
                 each person in people
                   option(value=person.username) #{person.realname} (#{person.username})
@@ -20,7 +20,7 @@ block content
                   option(value=recognition.title) #{recognition.title}
 
             div.form-group
-              label(for='by_user') Instructor:
+              label(for='by_user') Authorizing Instructor:
               select.form-control(name='by_user', id='by_user')
                 each person in people
                   if person.adminrole=='instructor'

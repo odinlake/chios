@@ -2,10 +2,37 @@ extends layout
 
 block content
   section
-    div.container             
-      h1 List of Recognitions
+    div.container
+      h1 Add Recognition
+      div.alert.alert-warning
+        div.container
+          form(method='POST' action='/people/addrecognition')
+            div.form-group
+              label(for='username') User:
+              select.form-control(name='username', id='username')
+                each person in people
+                  option(value=person.username) #{person.realname} (#{person.username})
 
-      div.top
+            div.form-group
+              label(for='recognition') Recognition:
+              select.form-control(name='recognition', id='recognition')
+                each recognition in recognitions
+                  option(value=recognition.title) #{recognition.title}
+
+            div.form-group
+              label(for='by_user') Instructor:
+              select.form-control(name='by_user', id='by_user')
+                each person in people
+                  if person.adminrole=='instructor'
+                    option(value=person.username) #{person.realname} (#{person.username})
+
+            div.form-group
+              label(for='using_password') Signoff:
+              input.form-control(type="password" id="using_password" placeholder="<password>")
+
+            button.btn.btn-primary(type='submit') Add Recognition
+
+      h1 List of Recognitions
       div.content
         table.table.table-striped
           thead

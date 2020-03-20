@@ -49,8 +49,9 @@ exports.getPeople = function(cb) {
 
 exports.getRecognitions = function(cb) {
     exports.connection().query(
+        "SELECT username, realname, adminrole, password FROM people; " +
         "SELECT username, recognition, date, by_user, using_password " +
-        "FROM recognitions", cb);
+        "FROM recognitions;", cb);
 };
 
 

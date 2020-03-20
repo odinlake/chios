@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  section
+    div.container
+      h1= title
+      div.alert.alert-warning
+        div.container
+          p= message
+      p Redirecting in a few seconds...
+
+    script(nonce="redirection").
+      setTimeout(function(){window.location.href='#{url}';},3000);

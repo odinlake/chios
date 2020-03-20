@@ -26,6 +26,7 @@ app.use(session({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public/images/favicon-pkg-1')));
 app.use('/bootstrap', express.static(path.join(__dirname, '/node_modules/bootstrap')));
 app.use('/jquery', express.static(path.join(__dirname, '/node_modules/jquery')));
 app.use('/', require('./routes/index'));

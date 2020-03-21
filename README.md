@@ -19,8 +19,9 @@ Make a local copy of the credentials file:
 > cp credentials_template.hjson credentials.hjson
 ```
 
-Modify `credentials.hjson` as necessary. 
+Modify `credentials.hjson` as necessary.
 To get full functionality you will need a MySql database and permission to create/delete/edit tables.
+If you do not modify the file you should still get a working system, but it will be empty of data.
 Let Node.js install required packages locally:
 
 ```

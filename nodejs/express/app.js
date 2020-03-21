@@ -18,8 +18,11 @@ if (config.deployment == "dev") {
 const app = express();
 
 app.use((req, res, next) => {
-  res.locals.deployment = config.deployment;
-  next();
+    res.locals.deployment = config.deployment;
+    if (config.deployment == "dev") {
+        res.locals.guestpassword = config.guestpassword;
+    }
+    next();
 });
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');

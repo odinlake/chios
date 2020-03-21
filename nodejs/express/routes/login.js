@@ -1,5 +1,5 @@
 const express = require('express');
-const chiosconfig = require('../libs/chiosconfig');
+const chiosconfig = require('../libs/chiosconfig').config();
 const router = express.Router();
 
 

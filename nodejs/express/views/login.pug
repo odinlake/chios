@@ -5,12 +5,14 @@ block content
     div.container             
       div.alert.alert-warning
         if !showlogout
-          h1 Login
+          h1= title
           form(method='POST' action='/login')
             div.form-group
               div.controls
                 input.form-control(type='text' id='pin' name='pin')
             button.btn.btn-primary(type='submit') Enter
+          if deployment=="dev"
+            p (guest password in devenv is "#{guestpassword}")
             
         else
           form(method='POST' action='/login/logout')

@@ -25,3 +25,7 @@ nav.navbar {
     width: 100%;
 }
 
+nav.navbar li.nav-item {
+    cursor: pointer;
+}
+

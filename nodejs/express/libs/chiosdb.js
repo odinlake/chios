@@ -35,6 +35,12 @@ exports.doDevSetup = function() {
 };
 
 
+exports.assertDev = function() {
+    assert.notEqual(config.deployment, "prod", 
+        "function not permitted in production");
+};
+
+
 exports.doCleanup = function() {
     exports.assertDev();
     return exports.execFile('../../sql/cleanup.sql');
@@ -50,15 +56,13 @@ exports.getPeople = function(cb) {
 exports.getRecognitions = function(cb) {
     exports.connection().query(
         "SELECT username, realname, adminrole, password FROM people; " +
-        "SELECT username, recognition, date, by_user, using_password " +
-        "FROM recognitions;", cb);
+        "SELECT username, recognition, `date`, by_user, using_password " +
+        "FROM recognitions ORDER BY `date` DESC;", cb);
 };
 
 
 exports.getProfile = function(username, cb) {
     username_safe = username.replace(/\W/g, '').toLowerCase();
-    var data = {};
-
     exports.connection().query(
         "SELECT username, realname, adminrole, password FROM people " +
         "WHERE username='" + username_safe + "'; " +
@@ -68,7 +72,13 @@ exports.getProfile = function(username, cb) {
 };
 
 
-exports.assertDev = function() {
-    assert.notEqual(config.deployment, "prod", 
-        "function not permitted in production");
+exports.addRecognition = function(username, recognition, by_user, 
+        using_password, cb) {
+    var now = new Date();
+    exports.connection().query(
+        "REPLACE INTO recognitions " +
+        "(`username`, `recognition`, `date`, `by_user`, `using_password`) " +
+        "VALUES (?)", 
+        [[username, recognition, now, by_user, using_password]], cb
+    );
 };

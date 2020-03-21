@@ -21,7 +21,7 @@ exports.auth = function(req, res) {
         console.log("AUTH", req.connection.remoteAddress);
     }
     if (!req.session.pinused) {
-        res.redirect(301, "/login");
+        res.redirect(307, "/login");
         return false;
     } else {
         return true;

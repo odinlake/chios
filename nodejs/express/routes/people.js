@@ -5,7 +5,7 @@ const router = express.Router();
 
 
 /* GET all users listing. */
-router.get('/', function(req, res, next) {
+router.get('/roster', function(req, res, next) {
     if (!chiosconfig.auth(req, res)) return;
     chiosdb.getPeople(function(err, rows) {
         if (err) {

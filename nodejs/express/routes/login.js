@@ -15,8 +15,9 @@ router.get('/', function(req, res, next) {
 
 /* POST login. */
 router.post('/', function(req, res, next) {
-    console.log(req.body.pin, chiosconfig.guestpassword);
+    var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     if (req.body.pin == chiosconfig.guestpassword) {
+        console.log("AUTH", ip, req.body.pin);
         req.session.pinused = req.body.pin;
         res.redirect(301, "/");
     } else {

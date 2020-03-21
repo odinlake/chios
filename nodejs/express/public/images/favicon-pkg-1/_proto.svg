@@ -3,18 +3,21 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#E6E6E6;}
+	.st0{fill:#FFFFFF;}
 	.st1{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
 	.st2{fill:none;stroke:#000000;stroke-miterlimit:10;}
-	.st3{fill:#FFFFFF;}
 </style>
-<circle id="XMLID_6_" class="st0" cx="7.5" cy="7.5" r="7.5"/>
+<path class="st0" d="M7.5,0C3.4,0,0,3.4,0,7.5h6C6,6.7,6.7,6,7.5,6S9,6.7,9,7.5S8.3,9,7.5,9v6c4.1,0,7.5-3.4,7.5-7.5S11.6,0,7.5,0z"
+	/>
 <path id="XMLID_1_" class="st1" d="M1.5,7.5c0-3.3,2.7-6,6-6s6,2.7,6,6s-2.7,6-6,6"/>
 <g id="XMLID_3_">
 	<line id="XMLID_14_" class="st2" x1="3.9" y1="11.1" x2="2.3" y2="12.7"/>
 </g>
-<line id="XMLID_2_" class="st2" x1="7.5" y1="1.5" x2="7.5" y2="13.7"/>
-<line id="XMLID_4_" class="st2" x1="1.5" y1="7.5" x2="13.5" y2="7.5"/>
-<circle id="XMLID_5_" class="st3" cx="7.5" cy="7.5" r="1.5"/>
 <circle id="XMLID_7_" class="st2" cx="7.5" cy="7.5" r="3"/>
+<g>
+	<path d="M7.5,6C7.7,6,7.8,6,8,6.1V1.5H7v4.6C7.2,6,7.3,6,7.5,6z"/>
+	<path d="M8.9,7C9,7.2,9,7.3,9,7.5S9,7.8,8.9,8h4.6V7H8.9z"/>
+	<path d="M6.1,8C6,7.8,6,7.7,6,7.5S6,7.2,6.1,7H1.5v0.5C1.7,7.7,1.8,7.8,2,8H6.1z"/>
+	<path d="M7.5,9C7.3,9,7.2,9,7,8.9v4.3c0.2,0.2,0.3,0.3,0.5,0.5H8V8.9C7.8,9,7.7,9,7.5,9z"/>
+</g>
 </svg>

@@ -13,7 +13,8 @@ exports.config = function() {
 
 
 exports.auth = function(req, res) {
-    if (req.connection.remoteAddress == '::ffff:127.0.0.1') {
+    var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    if (ip.endsWith("127.0.0.1")) {
         console.log("AUTH", "localdev");
         req.session.pinused = 'localdev';
     } else {

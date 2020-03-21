@@ -34,13 +34,7 @@ Start a local server:
 > npm start
 ```
 
-Alternatively install `nodemon`.
+Alternatively, install `nodemon`.
 Point your browser to http://127.0.0.1:3000.
 That's it.
-
-
-
-
-
-
 

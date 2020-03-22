@@ -21,17 +21,9 @@ exports.auth = function(req, res) {
         console.log("AUTH", req.connection.remoteAddress);
     }
     if (!req.session.pinused) {
-        res.redirect(307, "/login");
+        res.render('login', { title: 'Login' });
         return false;
     } else {
         return true;
     }
 };
-
-
-
-
-
-
-
-

@@ -19,7 +19,7 @@ router.post('/', function(req, res, next) {
     if (req.body.pin == chiosconfig.guestpassword) {
         console.log("AUTH", ip, req.body.pin);
         req.session.pinused = req.body.pin;
-        res.redirect(301, "/");
+        res.redirect(302, "/");
     } else {
         req.session.pinused = req.body.pin;
         res.render('login', { title: 'Fail. Try Again:' });
@@ -30,7 +30,7 @@ router.post('/', function(req, res, next) {
 /* POST logout. */
 router.post('/logout', function(req, res, next) {
     req.session.pinused = null;
-    res.redirect(301, "/login");
+    res.redirect(302, "/login");
 });
 
 

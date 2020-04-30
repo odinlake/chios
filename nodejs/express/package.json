@@ -16,7 +16,7 @@
     "express-session": "^1.17.0",
     "hjson": "^3.2.1",
     "http-errors": "~1.6.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "log-timestamp": "^0.3.0",
     "morgan": "~1.9.1",
     "mysql": "^2.18.1",
